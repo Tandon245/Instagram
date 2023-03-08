@@ -25,7 +25,7 @@ public class PostService {
 
     public JSONArray getPost(int userId, String postId) {
 
-        //Todo Add filter for userId
+
 
         JSONArray postArr = new JSONArray();
 

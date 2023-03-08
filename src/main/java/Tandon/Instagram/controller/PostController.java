@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Timestamp;
 
 @RestController
+@RequestMapping("/post")
 public class PostController {
 
 
@@ -25,7 +26,7 @@ public class PostController {
     PostService service;
 
 
-    @PostMapping(value = "/post")
+    @PostMapping(value = "/addPost")
     public ResponseEntity<String> savePost(@RequestBody String postRequest) {
 
         Post post = setPost(postRequest);
@@ -35,7 +36,7 @@ public class PostController {
 
 
 
-    @GetMapping(value = "/post")
+    @GetMapping(value = "/getPost")
     public ResponseEntity<String> getPost(@RequestParam String userId, @Nullable @RequestParam String postId) {
 
         JSONArray postArr = service.getPost(Integer.valueOf(userId), postId);
@@ -45,7 +46,7 @@ public class PostController {
 
 
 
-    @PutMapping(value = "/post/{postId}")
+    @PutMapping(value = "/updatePost/{postId}")
     public ResponseEntity<String> updatePost(@PathVariable String postId, @RequestBody String postRequest) {
 
         Post post = setPost(postRequest);
