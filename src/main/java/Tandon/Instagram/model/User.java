@@ -17,9 +17,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // To auto generate primary key
     private int userId;
 
-    @Column(name = "first_name", columnDefinition = "varchar(255) default 'John Snow'")
+    @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "user_name")
+    private String userName;
     @Column(name = "last_name")
     private String lastName;
 
